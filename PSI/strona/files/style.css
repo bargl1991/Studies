@@ -124,7 +124,7 @@ form {
 	margin-left: 4%;
 	margin-right: 4%;
 	margin-bottom: 0.5%;
-	background-color: #FEFEFE;
+	background-color: #111111;
 	float: left;
 }
 
@@ -139,19 +139,27 @@ form {
 	float: left;
 }
 
-.container .drop .drop_zone {
+.container .drop #drop_zone {
 	height: 95%;
 	width: 46%;
 	margin-left: 2%;
 	margin-right: 2%;
 	margin-top: 0.25%;
-	background-color: #DDDCCC;
+	background-color: #FFFFFF;
 	float: left;
 }
 
 .container .drop .drag .imgMargin {
-	margin: -10px 3px 20px 3px; /*top,right,bottom,left*/
+	margin: 3px 3px 20px 3px; /*top,right,bottom,left*/
 
 }
+
+.container .drop .drag #dropZone {
+	height: 4%;
+	width: 4%;
+	background-color: #BFBFBF;
+	float: left;
+}
+
 
 
