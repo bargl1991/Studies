@@ -1,12 +1,12 @@
 .container {
-	height: 700px;
+	height: 800px;
 	width: 100%;
 	background-color: #000000;
 
 }
 
 .container .naglowek{
-	height: 50%;
+	height: 30%;
 	width: 92%;
 	margin-left: 4%;
     margin-right: 4%;
@@ -14,7 +14,7 @@
 }
 
 .container .menu {
-	height: 10%;
+	height: 5%;
 	width: 92%%;
 	margin-left: 4%;
 	margin-right: 4%;
@@ -23,14 +23,14 @@
 }
 
 .container .stopka {
-	height: 10%;
+	height: 5%;
 	width: 100%;
 	background-color: #ABCDEF;
 	clear:left;
 }
 
 .container .kwadraty {
-	height: 30%;
+	height: 20%;
 	width: 92%;
 	margin-left: 4%;
 	margin-top: 1%;
@@ -92,7 +92,7 @@
 }
 
 .container .Srodek {
-	height: 4%;
+	height: 3%;
     width: 30%;
     background: linear-gradient(left top,white,red);
     background: -webkit-linear-gradient(left top,white,red);
@@ -107,22 +107,51 @@
 
 label {
         width: 4em;
-        text-align: center;
+        text-align: left;
         color:red;
 }
 
 form {
-	width: 80px;
+	width: 50px;
 	margin: 0 auto;
 	color:blue;
 }
 
-.submit input {
-	margin: 0 auto;
-    color: red;
+
+.container .drop {
+	height: 15%;
+	width: 92%;
+	margin-left: 4%;
+	margin-right: 4%;
+	margin-bottom: 0.5%;
+	background-color: #FEFEFE;
+	float: left;
 }
 
+.container .drop .drag {
+	height: 95%;
+	width: 46%;
+	margin-left: 2%;
+	margin-right: 2%;
+	margin-top: 0.25%;
+	margin-bottom: 0.25%;
+	background-color: #DDDCCC;
+	float: left;
+}
 
+.container .drop .drop_zone {
+	height: 95%;
+	width: 46%;
+	margin-left: 2%;
+	margin-right: 2%;
+	margin-top: 0.25%;
+	background-color: #DDDCCC;
+	float: left;
+}
 
+.container .drop .drag .imgMargin {
+	margin: -10px 3px 20px 3px; /*top,right,bottom,left*/
+
+}
 
 
