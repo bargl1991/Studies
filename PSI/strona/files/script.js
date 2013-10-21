@@ -46,6 +46,7 @@ var map;
             };
 
             // Create the map, and place it in the map_canvas div
+            
             map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
 
             // Place the initial marker

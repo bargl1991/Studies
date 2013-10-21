@@ -6,11 +6,12 @@
 }
 
 .container .naglowek{
-	height: 30%;
+	height: 35%;
 	width: 92%;
 	margin-left: 4%;
     margin-right: 4%;
 	background-color: #BBABAB;
+
 }
 
 .container .menu {
@@ -18,6 +19,7 @@
 	width: 92%%;
 	margin-left: 4%;
 	margin-right: 4%;
+	
 	background-color: #CB2121;
 	float:left;
 }
