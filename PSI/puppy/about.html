@@ -3,8 +3,42 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>About - Puppy Website Template</title>
+	<title>About - Puppy Website Template with gallery</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+	<style type="text/css">
+		body,html,div,blockquote,img,label,p,h1,h2,h3,h4,h5,h6,pre,ul,ol,li,dl,dt,dd,form,a,fieldset,input,th,td{border:0;outline:none;margin:0;padding:0;}
+		body{height:100%;background:#fff;color:#1f1f1f;font-family:"Lucida Sans Unicode","Lucida Grande",Arial,Verdana,sans-serif;font-size:13px;padding:7px 0;}
+		ul{list-style:none;}
+		.text-center {text-align: center; padding: 10px 0;}
+
+		#gallery {width: 660px; margin: 0 auto;}
+		#gallery ul {padding-left: 10px;}
+		#gallery li {display: inline; margin-right: 3px;}
+		#gallery #main-img {background: url(bg_img.png) no-repeat 0 0; padding: 26px;}
+	</style>
+
+	<script type="text/JavaScript">
+// prepare the form when the DOM is ready 
+		$(document).ready(function() {
+			$("#gallery li img").hover(function(){
+				$('#main-img').attr('src',$(this).attr('src').replace('', ''));
+			});
+			var imgSwap = [];
+			 $("#gallery li img").each(function(){
+				imgSwap.push(imgUrl);
+			});
+			$(imgSwap).preload();
+		});
+		$.fn.preload = function() {
+		    this.each(function(){
+		        $('<img/>')[0].src = this;
+		    });
+		}
+	</script>
+
+
 </head>
 <body>
 	<div id="header">
@@ -26,79 +60,19 @@
 			</ul>
 		</div>
 	</div>
-	<div id="body">
-		<div id="background">
-			<div>
-				<div class="about">
-					<h3>We Have Free Templates for Everyone</h3>
-					<p>
-						Our website templates are created with inspiration, checked for quality and originality and meticulously sliced and coded. What&#39;s more, they&#39;re absolutely free! You can do a lot with them. You can modify them. You can use them to design websites for clients, so long as you agree with the <a href="http://www.freewebsitetemplates.com/about/terms">Terms of Use</a>. You can even remove all our links if you want to.
-					</p>
-					<h3>We Have More Templates for You</h3>
-					<p>
-						Looking for more templates? Just browse through all our <a href="http://www.freewebsitetemplates.com/">Free Website Templates</a> and find what you&#39;re looking for. But if you don&#39;t find any website template you can use, you can try our <a href="http://www.freewebsitetemplates.com/freewebdesign/">Free Web Design</a> service and tell us all about it. Maybe you&#39;re looking for something different, something special. And we love the challenge of doing something different and something special.
-					</p>
-					<h3>Be Part of Our Community</h3>
-					<p>
-						If you&#39;re experiencing issues and concerns about this website template, join the discussion <a href="http://www.freewebsitetemplates.com/forums/">on our forum</a> and meet other people in the community who share the same interests with you.
-					</p>
-					<h3>Template details</h3>
-					<p>
-						Design version 2<br>Code version 3<br>Website Template details, discussion and updates for this <a href="http://www.freewebsitetemplates.com/discuss/puppy/">Puppy Website Template</a>.<br>Website Template design by <a href="http://www.freewebsitetemplates.com/">Free Website Templates</a>.<br>Please feel free to remove some or all the text and links of this page and replace it with your own About content.
-					</p>
-				</div>
-				<span>&#8220;This template is FREE&#8221;.</span>
-			</div>
-		</div>
-		<div id="section">
-			<ul>
-				<li>
-					<a href="blog.html"><img src="images/dog2.jpg" alt="Image"></a>
-					<div>
-						<p>
-							This website template has been designed by Free Website Templates for you, for free. You can replace all this text with your own text. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud
-						</p>
-						<a href="blog.html" class="readmore">Read more &gt;&gt;</a>
-					</div>
-				</li>
-				<li>
-					<a href="blog.html"><img src="images/dog2.jpg" alt="Image"></a>
-					<div>
-						<p>
-							This website template has been designed by Free Website Templates for you, for free. You can replace all this text with your own text. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud
-						</p>
-						<a href="blog.html" class="readmore">Read more &gt;&gt;</a>
-					</div>
-				</li>
-			</ul>
-		</div>
-	</div>
-	<div id="footer">
-		<div class="logo">
-			<a href="index.html"><img src="images/logo.jpg" alt="Logo"></a>
-		</div>
+	<div class="wrap">
+		<div id="gallery">
+		<img src="gallery/bobr.jpg" alt="" id="main-img" />
 		<ul>
-			<li>
-				<a href="index.html">Home</a>
-			</li>
-			<li>
-				<a href="about.html">About</a>
-			</li>
-			<li>
-				<a href="blog.html">Blog</a>
-			</li>
-			<li>
-				<a href="services.html">Services</a>
-			</li>
+		  <li><img src="gallery/bobr.jpg" alt="" /></li>
+		  <li><img src="gallery/konik.jpg" alt="" /></li>
+		  <li><img src="gallery/owca.jpg" alt="" /></li>
+		  <li><img src="gallery/waz.jpg" alt="" /></li>
+		  <li><img src="gallery/jez.jpg" alt="" /></li>
+		  <li><img src="gallery/wiewiorka.jpg" alt="" /></li>
 		</ul>
-		<p>
-			&copy; Copyright &copy; 2023. Company name all rights reserved
-		</p>
-		<div id="connect">
-			<a href="http://freewebsitetemplates.com/go/facebook/" target="_blank" id="facebook">Facebook</a>
-			<a href="http://freewebsitetemplates.com/go/twitter/" target="_blank" id="twitter">Twitter</a>
-			<a href="http://freewebsitetemplates.com/go/googleplus/" target="_blank" id="googleplus">Google&#43;</a>
-		</div>
+
 	</div>
+
 </body>
 </html>
