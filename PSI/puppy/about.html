@@ -7,72 +7,63 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 
 	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
-	<style type="text/css">
-		body,html,div,blockquote,img,label,p,h1,h2,h3,h4,h5,h6,pre,ul,ol,li,dl,dt,dd,form,a,fieldset,input,th,td{border:0;outline:none;margin:0;padding:0;}
-		body{height:100%;background:#fff;color:#1f1f1f;font-family:"Lucida Sans Unicode","Lucida Grande",Arial,Verdana,sans-serif;font-size:13px;padding:7px 0;}
-		ul{list-style:none;}
-		.text-center {text-align: center; padding: 10px 0;}
 
-		#gallery {width: 660px; margin: 0 auto;}
-		#gallery ul {padding-left: 10px;}
-		#gallery li {display: inline; margin-right: 3px;}
-		#gallery #main-img {background: url(bg_img.png) no-repeat 0 0; padding: 26px;}
-	</style>
-
-	<script type="text/JavaScript">
-// prepare the form when the DOM is ready 
-		$(document).ready(function() {
-			$("#gallery li img").hover(function(){
-				$('#main-img').attr('src',$(this).attr('src').replace('', ''));
-			});
-			var imgSwap = [];
-			 $("#gallery li img").each(function(){
-				imgSwap.push(imgUrl);
-			});
-			$(imgSwap).preload();
-		});
-		$.fn.preload = function() {
-		    this.each(function(){
-		        $('<img/>')[0].src = this;
-		    });
-		}
-	</script>
-
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+<script src="script/jquery.rotate.js"></script>
+<script src="script/script.js"></script>
 
 </head>
 <body>
 	<div id="header">
-		<div>
+		<div id="m">
 			<a href="index.html" class="logo">PugSureWoi</a>
 			<ul>
-				<li>
-					<a class="home" href="index.html">Home</a>
-				</li>
-				<li class="current">
-					<a class="about" href="about.html">About</a>
-				</li>
-				<li>
-					<a class="blog" href="blog.html">Blog</a>
-				</li>
-				<li>
-					<a class="services" href="services.html">Services</a>
-				</li>
+				<dev id="h">
+					<a class="home" href="index.html" style="color:#424141;
+					text-decoration: none;
+					text-transform: uppercase;
+					text-shadow: 0 1px #ffffff;">Home</a>
+				</dev>
+				<dev id="h" class="current">
+					<a class="about" href="about.html" style="color:#a3a3a3;
+					text-decoration: none;
+					text-transform: uppercase;
+					text-shadow: 0 1px #ffffff;">Galery</a>
+				</dev>
+				<dev id="h">
+					<a class="blog" href="blog.html" style="color:#bbb !important;
+					text-decoration: none;
+					text-transform: uppercase;
+					text-shadow: 0 1px #ffffff;
+					">Blog</a>
+				</dev>
+				<dev id ="h">
+					<a class="services" href="services.html" style="color:#bbb !important;
+					text-decoration: none;
+					text-transform: uppercase;
+					text-shadow: 0 1px #ffffff;
+					">Services</a>
+				</dev>
 			</ul>
 		</div>
 	</div>
-	<div class="wrap">
-		<div id="gallery">
-		<img src="gallery/bobr.jpg" alt="" id="main-img" />
-		<ul>
-		  <li><img src="gallery/bobr.jpg" alt="" /></li>
-		  <li><img src="gallery/konik.jpg" alt="" /></li>
-		  <li><img src="gallery/owca.jpg" alt="" /></li>
-		  <li><img src="gallery/waz.jpg" alt="" /></li>
-		  <li><img src="gallery/jez.jpg" alt="" /></li>
-		  <li><img src="gallery/wiewiorka.jpg" alt="" /></li>
-		</ul>
 
+	<div id="slideShowContainer">
+		
+	    <div id="slideShow">
+	    
+	    	<ul>
+	        	<li><img src="img/photos/1.jpg" width="100%" alt="Fish" /></li>
+	            <li><img src="img/photos/2.jpg" width="100%" alt="Ancient" /></li>
+	            <li><img src="img/photos/3.jpg" width="100%" alt="Industry" /></li>
+	            <li><img src="img/photos/4.jpg" width="100%" alt="Rain" /></li>
+	        </ul>
+	    
+	    </div>
+	    
+	    <a id="previousLink" href="#">&raquo;</a>
+	    <a id="nextLink" href="#">&laquo;</a>
+	    
 	</div>
-
 </body>
 </html>
