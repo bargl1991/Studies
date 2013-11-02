@@ -1,0 +1,167 @@
+.container {
+	height: 800px;
+	width: 100%;
+	background-color: #000000;
+
+}
+
+.container .naglowek{
+	height: 35%;
+	width: 92%;
+	margin-left: 4%;
+    margin-right: 4%;
+	background-color: #BBABAB;
+
+}
+
+.container .menu {
+	height: 5%;
+	width: 92%%;
+	margin-left: 4%;
+	margin-right: 4%;
+	
+	background-color: #CB2121;
+	float:left;
+}
+
+.container .stopka {
+	height: 5%;
+	width: 100%;
+	background-color: #ABCDEF;
+	clear:left;
+}
+
+.container .kwadraty {
+	height: 20%;
+	width: 92%;
+	margin-left: 4%;
+	margin-top: 1%;
+	margin-bottom: 1%;
+	background-color: #FEDCBA;
+}
+
+.container .kwadraty .kw1 {
+	height :92%;
+	width: 22%;
+	margin-top: 0.5%;
+	margin-left: 2%;
+	margin-right: 2%;
+	margin-bottom: 1%;
+	background-color: #AABBCC;
+	border-style: solid;
+    border-color: black;
+    border-radius: 15px;
+	float:left;
+}
+
+.container .kwadraty .kw2 {
+	height: 92%;
+	width: 22%;
+	margin-top: 0.5%;
+	margin-right: 2%;
+	margin-bottom: 1%;
+	background-color: #AAAAAA;
+	border-style: solid;
+    border-color: black;
+    border-radius: 15px;
+	float:left;
+}
+
+.container .kwadraty .kw3 {
+	height: 92%;
+	width: 22%;
+	margin-top: 0.5%;
+	margin-right: 2%;
+	margin-bottom: 1%;
+	background-color: #BBBBBB;
+	border-style: solid;
+    border-color: black;
+    border-radius: 15px;
+	float:left;
+}
+
+.container .kwadraty .kw4 {
+	height: 92%;
+	width: 22%;
+	margin-top: 0.5%;
+	margin-right: 2%;
+	margin-bottom: 1%;
+	background-color: #CCCCCC;
+	border-style: solid;
+    border-color: black;
+    border-radius: 15px;
+	float:left;
+}
+
+.container .Srodek {
+	height: 3%;
+    width: 30%;
+    background: linear-gradient(left top,white,red);
+    background: -webkit-linear-gradient(left top,white,red);
+    background: -moz-linear-gradient(left top,white, red);
+    margin: 0 auto;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    border-style: solid;
+    border-color: black;
+    border-radius: 15px;
+}
+
+label {
+        width: 4em;
+        text-align: left;
+        color:red;
+}
+
+form {
+	width: 50px;
+	margin: 0 auto;
+	color:blue;
+}
+
+
+.container .drop {
+	height: 15%;
+	width: 92%;
+	margin-left: 4%;
+	margin-right: 4%;
+	margin-bottom: 0.5%;
+	background-color: #111111;
+	float: left;
+}
+
+.container .drop .drag {
+	height: 95%;
+	width: 46%;
+	margin-left: 2%;
+	margin-right: 2%;
+	margin-top: 0.25%;
+	margin-bottom: 0.25%;
+	background-color: #DDDCCC;
+	float: left;
+}
+
+.container .drop #drop_zone {
+	height: 95%;
+	width: 46%;
+	margin-left: 2%;
+	margin-right: 2%;
+	margin-top: 0.25%;
+	background-color: #FFFFFF;
+	float: left;
+}
+
+.container .drop .drag .imgMargin {
+	margin: 3px 3px 20px 3px; /*top,right,bottom,left*/
+
+}
+
+.container .drop .drag #dropZone {
+	height: 4%;
+	width: 4%;
+	background-color: #BFBFBF;
+	float: left;
+}
+
+
+
