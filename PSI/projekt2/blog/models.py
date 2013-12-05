@@ -1,32 +1,21 @@
 from django.db import models
-import datetime
-from django.utils import timezone
+from django.contrib.auth.models import User
+from django.contrib import admin
+from django.core.mail import send_mail
 
-class Question(models.Model):
-    question_text = models.CharField(max_length=200)
-    pub_date = models.DateTimeField('date published')
-    def __str__(self):
-        return self.question_text
-    def was_published_recently(self):
-        return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
 
-class Choice(models.Model):
-    question = models.ForeignKey(Question)
-    choice_text = models.CharField(max_length=200)
-    votes = models.IntegerField(default=0)
-    def __str__(self):
-        return self.choice_text
-    
 class Post(models.Model):
-    author = models.CharField(max_length=200)
-    post_text = models.TextField()
-    def __str__(self):
-        return self.post_text
+    title = models.CharField(max_length=60)
+    body = models.TextField()
+    created = models.DateTimeField(auto_now_add=True)
 
-class Comment(models.Model):
-    post = models.ForeignKey(Post)
-    author = models.CharField(max_length=200)
-    comment_text =  models.TextField();
-    def __str__(self):
-        return self.comment_text
-    
+    def __unicode__(self):
+        return self.title
+
+
+### Admin
+
+class PostAdmin(admin.ModelAdmin):
+    search_fields = ["title"]
+
+admin.site.register(Post, PostAdmin)
