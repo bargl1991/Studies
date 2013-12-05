@@ -1,24 +1,25 @@
-from django.shortcuts import render
+from django.shortcuts import render_to_response
+from django.template import RequestContext
 from django.http import HttpResponse
-from blog.models import Question
+from blog.models import *
 from django.http import Http404
+from django.core.paginator import Paginator, InvalidPage, EmptyPage
+from django.core.urlresolvers import reverse
 
 
-def index(request):
-    latest_question_list = Question.objects.all().order_by('-pub_date')[:5]
-    context = {'latest_question_list': latest_question_list}
-    return render(request, 'blog/index.html', context)
+#def index(request):
+    #return HttpResponse("Hello, world. You're at the polls index.")
 
-def detail(request, question_id):
+def main(request):
+    posts = Post.objects.all()
+    paginator = Paginator(posts, 2)
+    try: 
+        page = int(request.GET.get("page", '1'))
+    except : 
+        page = 1
     try:
-        question = Question.objects.get(pk=question_id)
-    except Question.DoesNotExist:
-        raise Http404
-    return render(request, 'blog/detail.html', {'question': question})
-
-def results(request, question_id):
-    response = "You're looking at the results of question %s."
-    return HttpResponse(response % question_id)
-
-def vote(request, question_id):
-    return HttpResponse("You're voting on question %s." % question_id)
+        posts = paginator.page(page)
+    except (InvalidPage, EmptyPage):
+        posts = paginator.page(paginator.num_pages)
+    return render_to_response("list.html", dict(posts=posts, user=request.user))
+    

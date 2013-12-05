@@ -16,3 +16,17 @@ class Choice(models.Model):
     votes = models.IntegerField(default=0)
     def __str__(self):
         return self.choice_text
+    
+class Post(models.Model):
+    author = models.CharField(max_length=200)
+    post_text = models.TextField()
+    def __str__(self):
+        return self.post_text
+
+class Comment(models.Model):
+    post = models.ForeignKey(Post)
+    author = models.CharField(max_length=200)
+    comment_text =  models.TextField();
+    def __str__(self):
+        return self.comment_text
+    
