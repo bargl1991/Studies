@@ -66,6 +66,12 @@ DATABASES = {
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
 
+EMAIL_HOST = ""
+EMAIL_HOST_USER = ""
+EMAIL_HOST_PASSWORD = ""
+DEFAULT_FROM_EMAIL = ""
+SERVER_EMAIL = ""
+
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'

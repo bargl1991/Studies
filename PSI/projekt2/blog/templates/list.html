@@ -1,20 +1,23 @@
 {% extends "bbase.html" %}
-<style type="text/css">
+
+{% block sidebar %}
+    <style type="text/css">
         #sidebar { float: right; border: 1px dotted #ccc; padding: 4px; }
         a { margin-left: 15px; }
     </style>
-     <div id="sidebar">
+    <div id="sidebar">
         Monthly Archive
         <p>
         {% for month in months %}
             {% ifchanged month.0 %} {{ month.0 }} <br /> {% endifchanged %}
-            <a href="{% url blog.views.month month.0 month.1 %}">{{ month.2 }}</a> <br />
+            <a href="{% url 'blog.views.month' month.0 month.1 %}">{{ month.2 }}</a> <br />
         {% endfor %}
         </p>
     </div>
-{% block content %}
+{% endblock %}
 
-<style type="text/css">
+{% block content %}
+    <style type="text/css">
         .main { margin-left: 25px; margin-top: 30px; }
         .time { font-size: 0.8em; margin-top: 2px; }
         .body { font-size: 1.1em; margin-top: 2px; }
@@ -30,17 +33,19 @@
     <div class="main">
 
         <!-- Posts  -->
-        <ul>
-            {% for post in posts.object_list %}
+            {% for post in post_list %}
                 <div class="title">{{ post.title }}</div>
                 <ul>
                     <div class="time">{{ post.created }}</div>
                     <div class="body">{{ post.body|linebreaks }}</div>
+                    <div class="commentlink">
+                    <a href="{% url 'blog.views.post' post.pk %}">Comments ({{ post.comment_set.count }})</a>
+                    </div>
                 </ul>
             {% endfor %}
-        </ul>
 
-       {% if not archive and posts.object_list and posts.paginator.num_pages > 1 %}
+        <!-- Next/Prev page links  -->
+        {% if not archive and posts.object_list and posts.paginator.num_pages > 1 %}
         <div class="pagination">
             <span class="step-links">
                 {% if posts.has_previous %}
