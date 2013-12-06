@@ -24,7 +24,7 @@ def post(request, pk):
     comments = Comment.objects.filter(post=post)
     d = dict(post=post, comments=comments, form=CommentForm(), user=request.user)
     d.update(csrf(request))
-    return render_to_response("post.html", d)
+    return render_to_response("blog/post.html", d)
 
 def delete_comment(request, post_pk, pk=None):
     """Delete comment(s) with primary key `pk` or with pks in POST."""

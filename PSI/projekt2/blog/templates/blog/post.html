@@ -41,14 +41,14 @@
                 <p>Comments:</p>
             {% endif %}
 
-            <form action="{% url blog.views.delete_comment post.pk %}" method="POST">{% csrf_token %}
+            <form action="{% url 'blog.views.delete_comment' post.pk %}" method="POST">{% csrf_token %}
             {% for comment in comments %}
                 <div class="comment">
                     <div class="time">{{ comment.created }} | {{ comment.author }}</div>
                     <div class="body">{{ comment.body|linebreaks }}</div>
                     {% if user.is_staff %}
                         <input type="checkbox" name="delete" value="{{ comment.pk }}">
-                        <a href="{% url blog.views.delete_comment post.pk comment.id %}">delete</a>
+                        <a href="{% url 'blog.views.delete_comment' post.pk comment.id %}">delete</a>
                     {% endif %}
                 </div>
             {% endfor %}
@@ -61,7 +61,7 @@
 
             <div id="addc">Add a comment</div>
             <!-- Comment form  -->
-            <form action="{% url blog.views.add_comment post.id %}" method="POST">{% csrf_token %}
+            <form action="{% url 'blog.views.add_comment' post.id %}" method="POST">{% csrf_token %}
                 <div id="cform">
                     Name: {{ form.author }}
                     <p>{{ form.body|linebreaks }}</p>
