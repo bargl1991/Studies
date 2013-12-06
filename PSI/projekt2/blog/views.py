@@ -34,7 +34,7 @@ def delete_comment(request, post_pk, pk=None):
 
         for pk in pklst:
             Comment.objects.get(pk=pk).delete()
-        return HttpResponseRedirect(reverse("dbe.blog.views.post", args=[post_pk]))
+        return HttpResponseRedirect(reverse("blog.views.post", args=[post_pk]))
 
 def add_comment(request, pk):
     """Add a new comment."""
@@ -55,7 +55,7 @@ def add_comment(request, pk):
         notify = True
         if request.user.username == "ak": notify = False
         comment.save(notify=notify)
-    return HttpResponseRedirect(reverse("dbe.blog.views.post", args=[pk]))
+    return HttpResponseRedirect(reverse("blog.views.post", args=[pk]))
 
 def mkmonth_lst():
     """Make a list of months to show archive links."""
