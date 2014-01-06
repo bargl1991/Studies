@@ -162,9 +162,14 @@ letter-spacing:-1px;
 
 a
 {
-text-decoration:none;
-color:#2A2A2A;
-border-bottom:1px dashed #2A2A2A;
+width:676px;
+height:37px;
+margin-top:20px;
+margin-left:25px;
+margin-right:25px;
+margin-bottom:10px;
+background-image:url(tab_back.png);
+background-repeat:no-repeat;
 }
 
 a:hover

@@ -30,30 +30,39 @@
                 <div class="link"><a href="#">products</a></div>
                 <div class="link"><a href="#">faq</a></div>
             </div>
-            
+
             <%
+                String ss = request.getParameter("Id");
+                //out.println("my value" + ss);
                 Class.forName("org.sqlite.JDBC");
-                Connection conn =
-                     DriverManager.getConnection("jdbc:sqlite:/home/yoda/NetBeansProjects/WebApplication1/web/db.sqlite3");
-                Statement stat = conn.createStatement();
- 
-                ResultSet rs = stat.executeQuery("select * from sen order by id limit 6;");
- 
-                while (rs.next()) {
-                    String z = "<a href=\"Sen.jsp?Id=" +rs.getString("Nazwa_snu") + " \"class=\"contentTitle\"> <h1>" +rs.getString("Nazwa_snu") +"</h1></a>";
-                    out.println(z);
-                    out.println("<div class=\"contentText\">" + rs.getString("Opis_snu") + "</div>  ");
-                    //out.println(z);
+                Connection conn
+                        = DriverManager.getConnection("jdbc:sqlite:/home/yoda/NetBeansProjects/WebApplication1/web/db.sqlite3");
+
+                String selectSQL = "SELECT Nazwa_snu FROM sen WHERE Nazwa_snu = ? ";
+                Statement stmt;
+                try {
+                    stmt = conn.createStatement(ResultSet.TYPE_FORWARD_ONLY,
+                            ResultSet.CONCUR_READ_ONLY);
+                    PreparedStatement statement = conn.prepareStatement("select Nazwa_snu,Opis_snu from sen where Nazwa_snu=?");
+                    statement.setString(1, ss);
+                    ResultSet rs = statement.executeQuery();
+                    while (rs.next()) {
+                        out.println("<div class=\"contentTitle\"><h1>" + rs.getString(1) + "</h1></div>");
+                        out.println("<div class=\"contentText\">" + rs.getString(2) + "</div>  ");
+                    }
+
+                    rs.close();
+                } catch (SQLException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
                 }
- 
-                rs.close();
+
                 conn.close();
-                
             %>
         </div>
         <div id="footer"><a href="http://www.aszx.net">web development</a> by <a href="http://www.bryantsmith.com">bryant smith</a></div>
     </body>
     <tbody>
-            
-            </tbody>
+
+    </tbody>
 </html>

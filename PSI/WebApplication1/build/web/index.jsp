@@ -6,7 +6,6 @@
 
 <%@ page import="java.sql.*" %>
 <%@ page import="org.sqlite.*" %>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -38,15 +37,18 @@
                      DriverManager.getConnection("jdbc:sqlite:/home/yoda/NetBeansProjects/WebApplication1/web/db.sqlite3");
                 Statement stat = conn.createStatement();
  
-                ResultSet rs = stat.executeQuery("select * from sen;");
+                ResultSet rs = stat.executeQuery("select * from sen order by id limit 6;");
  
                 while (rs.next()) {
-                    out.println("<div class=\"contentTitle\"><h1>" + rs.getString("Nazwa_snu") + "</h1></div>");
+                    String z = "<a href=\"Sen.jsp?Id=" +rs.getString("Nazwa_snu") + " \"class=\"contentTitle\"> <h1>" +rs.getString("Nazwa_snu") +"</h1></a>";
+                    out.println(z);
                     out.println("<div class=\"contentText\">" + rs.getString("Opis_snu") + "</div>  ");
+                    //out.println(z);
                 }
  
                 rs.close();
                 conn.close();
+                
             %>
         </div>
         <div id="footer"><a href="http://www.aszx.net">web development</a> by <a href="http://www.bryantsmith.com">bryant smith</a></div>
