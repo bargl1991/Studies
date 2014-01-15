@@ -89,7 +89,6 @@
                 </div>
 
                 <%
-                    out.println("<div id=\"content\">");
                     String ss = request.getParameter("Id");
                     //out.println("my value" + ss);
                     Class.forName("org.sqlite.JDBC");
